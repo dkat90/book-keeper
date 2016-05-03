@@ -1,0 +1,17 @@
+{{outlet}}
+<h2 id="newBook">New Book</h2>
+<form>
+  <div class="form-group">
+    <label for="titleInput">Title</label>
+    {{input value=title placeholder="Title" class="form-control" id="titleInput"}}
+  </div>
+  <div class="form-group">
+    <label for="authorInput">Author</label>
+    {{input value=author placeholder="Author" class="form-control" id="authorInput"}}
+  </div>
+  <div class="form-group">
+    <label for="yearInput">Publish Year</label>
+    {{input value=pubYear placeholder="Publish Year" class="form-control" id="yearInput"}}
+  </div>
+  <button {{action "publishBook"}} class="btn btn-default">Publish</button>
+</form>  
