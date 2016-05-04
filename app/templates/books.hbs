@@ -6,7 +6,8 @@
     <p>
       <span><strong>{{book.title}}</strong> - <em>{{book.author}}</em> - {{book.pubYear}}</span>
       <button class="btn btn-danger" {{action "deleteBook" book}}>Delete</button>
+      {{#link-to 'books.edit' book.id class='btn btn-success'}}Edit{{/link-to}}
     </p>
     {{/each}}
   </section>
-</div>  
+</div>

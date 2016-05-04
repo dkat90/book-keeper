@@ -8,7 +8,10 @@ export default Ember.Controller.extend({
         pubYear: this.get('pubYear'),
       });
       newBook.save();
-      this.transitionTo('books');
+      this.transitionToRoute('books');
     },
+    goBack: function() {
+      this.transitionToRoute('books');
+    }
   },
 });

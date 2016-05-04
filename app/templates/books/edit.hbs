@@ -1,5 +1,5 @@
 {{outlet}}
-<h2 id="newBook">New Book</h2>
+<h2 id="newBook">Edit Book</h2>
 <form>
   <div class="form-group">
     <label for="titleInput">Title</label>
@@ -13,6 +13,5 @@
     <label for="yearInput">Publish Year</label>
     {{input value=pubYear placeholder="Publish Year" class="form-control" id="yearInput"}}
   </div>
-  <button {{action "publishBook"}} class="btn btn-default">Publish</button>
-  <button {{action "goBack"}} class="btn btn-default">Cancel</button>
+  <button {{action "saveBook"}} class="btn btn-default">Save</button>
 </form>
