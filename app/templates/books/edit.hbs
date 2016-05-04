@@ -1,17 +1,20 @@
+{{#if session.isAuthenticated}}
 {{outlet}}
 <h2 id="newBook">Edit Book</h2>
 <form>
   <div class="form-group">
     <label for="titleInput">Title</label>
-    {{input value=title placeholder="Title" class="form-control" id="titleInput"}}
+    {{input value=model.title placeholder="Title" class="form-control" id="titleInput"}}
   </div>
   <div class="form-group">
     <label for="authorInput">Author</label>
-    {{input value=author placeholder="Author" class="form-control" id="authorInput"}}
+    {{input value=model.author placeholder="Author" class="form-control" id="authorInput"}}
   </div>
   <div class="form-group">
     <label for="yearInput">Publish Year</label>
-    {{input value=pubYear placeholder="Publish Year" class="form-control" id="yearInput"}}
+    {{input value=model.pubYear placeholder="Publish Year" class="form-control" id="yearInput"}}
   </div>
   <button {{action "saveBook"}} class="btn btn-default">Save</button>
+  <button {{action "goBack"}} class="btn btn-default">Cancel</button>
 </form>
+{{/if}}

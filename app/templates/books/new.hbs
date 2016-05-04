@@ -1,3 +1,4 @@
+{{#if session.isAuthenticated}}
 {{outlet}}
 <h2 id="newBook">New Book</h2>
 <form>
@@ -16,3 +17,5 @@
   <button {{action "publishBook"}} class="btn btn-default">Publish</button>
   <button {{action "goBack"}} class="btn btn-default">Cancel</button>
 </form>
+
+{{/if}}

@@ -4,18 +4,34 @@ export default Ember.Controller.extend({
 
   actions: {
     saveBook() {
-      console.log(this.model.id)
       // newBook.save().then(() => this.transitionToRoute('books'));
-      var title = this.get('title')
-      var author = this.get('author')
-      var pubYear = this.get('pubYear')
-      console.log(title)
-      this.store.findRecord('book', this.model.id).then(function(book){
-        book.set("title", title)
-        book.set("author", author)
-        book.set('pubYear', pubYear)
-        book.save()
-      })
+      var titleEdited = this.get("model.title")
+      var authorEdited = this.get("model.author")
+      var pubYearEdited = this.get("model.pubYear")
+      // console.log(title)
+      // this.store.findRecord('book', this.model.id).then(function(book){
+      //   book.set("model.title", title)
+      //   book.set("model.author", author)
+      //   book.set('model.pubYear', pubYear)
+      //   book.save()
+      // })
+    this.store.findRecord('book', this.model.id).then(function(boob){
+
+        boob.setProperties({title: titleEdited, author: authorEdited, pubYear: pubYearEdited});
+        // boob.set(title, "model.title"),
+        // boob.set(author, "model.author"),
+        // boob.set(pubYear, "model.pubYear"),
+        boob.save();
+      });
+
+      this.transitionToRoute('books');
+      // var newBook = this.store.createRecord('book', {
+      //   title: this.get('model.title'),
+      //   author: this.get('model.author'),
+      //   pubYear: this.get('model.pubYear'),
+      //   });
+      // newBook.save();
+      // this.transitionToRoute('books');
     },
 
     willTransition(transition) {
@@ -31,6 +47,9 @@ export default Ember.Controller.extend({
           transition.abort();
         }
       }
-    }
+    },
+    goBack: function() {
+      this.transitionToRoute('books');
+    },
   }
 });
