@@ -1,0 +1,9 @@
+{
+  "firebase": "book-store-03052016",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
