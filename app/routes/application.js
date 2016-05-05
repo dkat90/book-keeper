@@ -7,7 +7,7 @@ export default Ember.Route.extend({
    actions: {
      signIn: function(provider) {
        this.get("session").open("firebase", { provider: provider, settings:{
-         scope: ['https://www.googleapis.com/auth/books']
+         //add scopes here provided there are some
        }}).then(function(data) {
          console.log(data.currentUser);
          localStorage.setItem("accessToken", data.currentUser.accessToken);
