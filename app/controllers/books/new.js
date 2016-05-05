@@ -6,7 +6,8 @@ export default Ember.Controller.extend({
         title: this.get('title'),
         author: this.get('author'),
         pubYear: this.get('pubYear'),
-        image: this.get('image')
+        image: this.get('image'),
+        creator: this.get("session.currentUser.displayName")
       });
       newBook.save().then(function(){
         this.set('title',"");

@@ -13,5 +13,6 @@ export default DS.Model.extend({
     title: DS.attr('string'),
     author: DS.attr('string'),
     pubYear: DS.attr('number'),
-    image: DS.attr('string')
+    image: DS.attr('string'),
+    creator: DS.attr('string')
 })

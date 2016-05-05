@@ -1,11 +1,11 @@
 {{#if session.isAuthenticated}}
-<div class="col-md-6 col-md-offset-3">
+<div class="col-md-8 col-md-offset-1">
   {{outlet}}
   <section>
     <h2>Book List</h2>
     {{#each model as |book|}}
     <p>
-      <span><strong>{{book.title}}</strong> - <em>{{book.author}}</em> - {{book.pubYear}}</span>
+      <span><strong>{{book.title}}</strong> - <em>{{book.author}}</em> - {{book.pubYear}} - Created By:{{book.creator}}</span>
       {{#if isImageShowing}}
         <p><img src={{book.image}} alt="book image" width="250" height="250"></p>
         <button {{action "imageHide"}}>Hide image</button>
