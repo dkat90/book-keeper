@@ -5,9 +5,10 @@ export default Ember.Controller.extend({
   actions: {
     saveBook() {
       // newBook.save().then(() => this.transitionToRoute('books'));
-      var titleEdited = this.get("model.title")
-      var authorEdited = this.get("model.author")
-      var pubYearEdited = this.get("model.pubYear")
+      var titleEdited = this.get("model.title");
+      var authorEdited = this.get("model.author");
+      var pubYearEdited = this.get("model.pubYear");
+      var imageEdited = this.get("model.image");
       // console.log(title)
       // this.store.findRecord('book', this.model.id).then(function(book){
       //   book.set("model.title", title)
@@ -17,7 +18,7 @@ export default Ember.Controller.extend({
       // })
     this.store.findRecord('book', this.model.id).then(function(boob){
 
-        boob.setProperties({title: titleEdited, author: authorEdited, pubYear: pubYearEdited});
+        boob.setProperties({title: titleEdited, author: authorEdited, pubYear: pubYearEdited, image: imageEdited});
         // boob.set(title, "model.title"),
         // boob.set(author, "model.author"),
         // boob.set(pubYear, "model.pubYear"),

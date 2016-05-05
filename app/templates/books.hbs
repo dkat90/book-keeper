@@ -6,6 +6,12 @@
     {{#each model as |book|}}
     <p>
       <span><strong>{{book.title}}</strong> - <em>{{book.author}}</em> - {{book.pubYear}}</span>
+      {{#if isImageShowing}}
+        <p><img src={{book.image}} alt="book image" width="250" height="250"></p>
+        <button {{action "imageHide"}}>Hide image</button>
+      {{else}}
+        <button{{action "imageShow"}}>Show image</button>
+      {{/if}}
       <button class="btn btn-danger btn-sm" {{action "deleteBook" book}}>Delete</button>
       {{#link-to 'books.edit' book.id class='btn btn-success btn-sm'}}Edit{{/link-to}}
     </p>

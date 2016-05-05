@@ -6,8 +6,14 @@ export default Ember.Controller.extend({
         title: this.get('title'),
         author: this.get('author'),
         pubYear: this.get('pubYear'),
+        image: this.get('image')
       });
-      newBook.save();
+      newBook.save().then(function(){
+        this.set('title',"");
+        this.set('author',"");
+        this.set('pubYear',"");
+        this.set('image',"");
+      });
       this.transitionToRoute('books');
     },
     goBack: function() {
