@@ -14,5 +14,8 @@ export default DS.Model.extend({
     author: DS.attr('string'),
     pubYear: DS.attr('number'),
     image: DS.attr('string'),
-    creator: DS.attr('string')
+    creator: DS.attr('string'),
+    createdAt: DS.attr('date', {
+      defaultValue(){ return new Date(); }
+    })
 })

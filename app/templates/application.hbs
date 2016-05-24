@@ -70,3 +70,8 @@
   {{#link-to 'books.new'}}<button class="btn btn-primary">Add new book</button>{{/link-to}}
 </div>
 {{outlet}}
+{{#if session.isAuthenticated}}
+  {{#each model as |bookUnit|}}
+    {{book-listing book=bookUnit}}
+  {{/each}}
+{{/if}}

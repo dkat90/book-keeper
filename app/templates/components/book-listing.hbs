@@ -1,11 +1,12 @@
-{{!-- {{#if session.isAuthenticated}} --}}
-{{outlet}}
-{{!-- <div class="col-md-8 col-md-offset-1">
+{{yield}}
+<div class="col-md-8 col-md-offset-1">
   <section>
-    <h2>Book List</h2>
-    {{#each model as |bookUnit|}}
+    {{!-- <h2>Book List</h2> --}}
+    {{!-- {{#each model as |book|}} --}}
     <p>
-      <span><strong>{{book.title}}</strong> - <em>{{book.author}}</em> - {{book.pubYear}} - Created By:{{book.creator}}</span>
+      <span><strong>{{book.title}}</strong> - <em>{{book.author}}</em> - {{book.pubYear}} - Started:{{book.createdAt}}</span>
+    </p>
+    <p>
       {{#if isImageShowing}}
         <p><img src={{book.image}} alt="book image" width="250" height="250"></p>
         <button {{action "imageHide"}}>Hide image</button>
@@ -15,7 +16,6 @@
       <button class="btn btn-danger btn-sm" {{action "deleteBook" book}}>Delete</button>
       {{#link-to 'books.edit' book.id class='btn btn-success btn-sm'}}Edit{{/link-to}}
     </p>
-    {{/each}}
+    {{!-- {{/each}} --}}
   </section>
 </div>
-{{/if}} --}}
