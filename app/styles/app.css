@@ -1,0 +1,16 @@
+.navbar-default .btn-link{
+  color: #286090;
+  margin-top: 8px;
+}
+.navbar-default .btn-link:hover{
+  color:green;
+  text-decoration: none;
+}
+
+#logout:hover{
+  color:red;
+}
+
+#identity{
+  margin-top: 1.1em;
+}
